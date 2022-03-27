@@ -1,0 +1,69 @@
+* {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+body {
+    background-color: #5c1a5c;
+    margin: 0;
+}
+.signup-container {
+    width: 400px;
+    height: 100px;
+    background-color: goldenrod;
+    box-shadow: 0 0 50px 0 rgba(230, 177, 5, 0.3);
+    margin: 100px auto;
+    text-align: center;
+    color: #5b6574;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    color: #adb2ba;
+    text-decoration: none;
+    font-weight: bold;
+    color: #9da3ac;
+    border-radius: 5px;
+}
+
+.nav-link-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding-top: 50px;
+}
+
+.link {
+    text-decoration: none;
+    color: goldenrod;
+}
+
+
+
+// delete below
+.game-area {
+    position: relative;
+    margin: 50px auto;
+    width: 600px;
+    height: 600px;
+    border: 2px solid #000;
+  }
+  
+  .snake-dot {
+    position: absolute;
+    width: 2%;
+    height: 2%;
+    background-color: #000;
+    border: 1px solid #fff;
+    z-index: 2;
+  }
+  
+  .snake-food {
+    position: absolute;
+    width: 2%;
+    height: 2%;
+    background: red;
+    border: 1px solid #fff;
+    z-index: 1;
+  }
