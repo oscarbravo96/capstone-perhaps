@@ -38,7 +38,7 @@ export default function Login() {
                     setErrorMessage('')
                     Cookies.set('username', username)
                     console.log("still works")
-                    navigate('/')
+                    navigate('/snake')
                 }
             })
         }

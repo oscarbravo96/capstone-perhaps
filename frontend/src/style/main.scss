@@ -6,7 +6,7 @@
     -moz-osx-font-smoothing: grayscale;
 }
 body {
-    background-color: #5c1a5c;
+    background-color: rgba(189, 109, 4, 0.596);
     margin: 0;
 }
 .signup-container {
@@ -36,7 +36,7 @@ body {
 
 .link {
     text-decoration: none;
-    color: goldenrod;
+    color: rgb(51, 230, 6);
 }
 
 
@@ -48,14 +48,16 @@ body {
     width: 600px;
     height: 600px;
     border: 2px solid #000;
+    background-image: url(.//images/farm.png);
+    background-size: cover;
   }
   
   .snake-dot {
     position: absolute;
     width: 2%;
     height: 2%;
-    background-color: #000;
-    border: 1px solid #fff;
+    background-color: brown;
+    border: 1px solid black;
     z-index: 2;
   }
   
@@ -63,7 +65,24 @@ body {
     position: absolute;
     width: 2%;
     height: 2%;
-    background: red;
-    border: 1px solid #fff;
+    background-image: url(.//images/applePixels.png);
+    background-size: cover;
     z-index: 1;
+  }
+
+  .game-over {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 32px;
+
+  }
+
+  .btn {
+      background-color: yellowgreen;
+      position: absolute;
+      top: 85%;
+      left: 50%;
+      transform: translate(-50%, -50%);
   }

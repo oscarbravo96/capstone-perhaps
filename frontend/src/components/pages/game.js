@@ -12,27 +12,37 @@ const getRandomCoordinates = () => {
 
 const initialState = {
   food: getRandomCoordinates(),
-  speed: 200,
+  speed: 100,
   direction: 'RIGHT',
   snakeDots: [
     [0,0],
     [2,0]
-  ]
+  ],
+  gameOver: false,
+  snakeChange: 0,
+  gameState: "Start Game"
 }
+
+let interval;
 
 class Game extends Component {
 
   state = initialState;
 
   componentDidMount() {
-    setInterval(this.moveSnake, this.state.speed);
+    // setInterval(this.moveSnake, this.state.speed);
     document.onkeydown = this.onKeyDown;
   }
 
-  componentDidUpdate() {
-    this.checkIfOutOfBorders();
-    this.checkIfCollapsed();
-    this.checkIfEat();
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.snakeChange!==this.state.snakeChange) {
+      this.checkIfCollapsed();
+      this.checkIfOutOfBorders();
+      this.checkIfEat();
+    }
+    // this.checkIfOutOfBorders();
+    // this.checkIfCollapsed();
+    // this.checkIfEat();
   }
 
   onKeyDown = (e) => {
@@ -51,6 +61,11 @@ class Game extends Component {
         this.setState({direction: 'RIGHT'});
         break;
     }
+  }
+
+  startGame = () => {
+    interval = setInterval(this.moveSnake, this.state.speed);
+    this.setState({gameState:"Start Game"})
   }
 
   moveSnake = () => {
@@ -74,7 +89,8 @@ class Game extends Component {
     dots.push(head);
     dots.shift();
     this.setState({
-      snakeDots: dots
+      snakeDots: dots,
+      snakeChange: this.state.snakeChange +1
     })
   }
 
@@ -112,11 +128,12 @@ class Game extends Component {
     let newSnake = [...this.state.snakeDots];
     newSnake.unshift([])
     this.setState({
-      snakeDots: newSnake
+      snakeDots: newSnake,
+      snakeChange: this.state.snakeChange +1
     })
   }
 
-  increaseSpeed() {
+  increaseSpeed = () => {
     if (this.state.speed > 10) {
       this.setState({
         speed: this.state.speed - 10
@@ -124,16 +141,39 @@ class Game extends Component {
     }
   }
 
-  onGameOver() {
-    alert(`Game Over. Snake length is ${this.state.snakeDots.length}`);
+  playAgain = () => {
     this.setState(initialState)
+  }
+
+  onGameOver() {
+    // alert(`Game Over. Snake length is ${this.state.snakeDots.length}`);
+    // this.setState(initialState)
+    clearInterval(interval)
+    this.setState({gameOver:true, gameState:"Play Again"})
+  }
+
+  setButtonClick() {
+    switch(this.state.gameState) {
+      case "Start Game":
+        return this.startGame
+      // case "Increase Speed":
+      //   return this.increaseSpeed
+      case "Play Again":
+        return this.playAgain
+      default:
+        return
+    }
   }
 
   render() {
     return (
-      <div className="game-area">
-        <Snake snakeDots={this.state.snakeDots}/>
-        <Food dot={this.state.food}/>
+      <div className='game-container'>
+        <div className="game-area">
+          <Snake snakeDots={this.state.snakeDots}/>
+          {this.state.gameOver &&<h1 className='game-over'>Game Over</h1>}
+          <Food dot={this.state.food}/>
+        </div>
+        <button className='btn' onClick={this.setButtonClick()}>{this.state.gameState}</button>
       </div>
     );
   }
