@@ -1,10 +1,14 @@
 import React from "react";
 import { A } from 'hookrouter';
+import logo from "../pages/arcade-logo.png"
 
 export default function NavBar() {
     return (
         <div className="navigation-container">
             <div className="nav-link-wrapper">
+                <img src={logo} />
+
+                
                 <div className="nav-link">
                     <A className="link" href="/">
                         Home
@@ -17,11 +21,6 @@ export default function NavBar() {
                     </A>
                 </div>
 
-                <div className="nav-link">
-                    <A className="link" href="/snake">
-                        Game
-                    </A>
-                </div>
 
                 <div className="nav-link">
                     <A className="link" href="/login">

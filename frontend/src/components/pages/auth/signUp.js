@@ -53,7 +53,7 @@ export default function SignUp() {
                 <input type='text' placeholder='Password' name='password' value={password} onChange={(e) => setPassword(e.target.value)} />
                 <input type='text' placeholder='Confirm Password' name='confirmpassword' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
 
-                <button className="btn">Submit</button>
+                <button className="signup-btn">Submit</button>
             </form>
         </div>
     )

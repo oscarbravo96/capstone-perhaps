@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Snake from './Snake';
 import Food from './Food';
+import jake from "./cartoon-snake.png"
 
 const getRandomCoordinates = () => {
   let min = 1;
@@ -170,10 +171,12 @@ class Game extends Component {
       <div className='game-container'>
         <div className="game-area">
           <Snake snakeDots={this.state.snakeDots}/>
-          {this.state.gameOver &&<h1 className='game-over'>Game Over</h1>}
+          {this.state.gameOver &&<h1 className='game-over'>Game Over!
+          Score: {this.state.snakeDots.length}</h1>}
           <Food dot={this.state.food}/>
         </div>
         <button className='btn' onClick={this.setButtonClick()}>{this.state.gameState}</button>
+        <img src={jake} />
       </div>
     );
   }
