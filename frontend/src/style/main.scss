@@ -26,6 +26,13 @@ body {
     font-weight: bold;
     color: #9da3ac;
     border-radius: 5px;
+
+    .signup-btn {
+      position: absolute;
+      top: 33%;
+      left: 48%;
+      background-color: goldenrod;
+    }
 }
 
 .nav-link-wrapper {
@@ -54,6 +61,22 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    .welcome {
+        font-size: 20px;
+        color: #d5d8db;
+    }
+
+    .construction {
+        font-size: 25px;
+        color: orange;
+        -webkit-text-stroke: 1.5px black;
+    }
+
+    .instructions {
+        font-size: 20px;
+        color: #d5d8db;
+    }
 }
 
 .game-container img {

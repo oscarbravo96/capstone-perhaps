@@ -30,7 +30,7 @@ export default function App() {
   const routeResult = useRoutes(routes)
     return (
       <div className='app'>
-        <NavBar />
+        <NavBar loggedIn={loggedIn} logout={logout} />
         {routeResult}
       </div>
     );
