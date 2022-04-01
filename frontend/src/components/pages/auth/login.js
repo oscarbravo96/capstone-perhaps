@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { navigate } from 'hookrouter'
 import Cookies from 'js-cookie'
+import SignIn from "./sign-in.png"
+import Retro from "./retro-arcade.jpg";
 
 export default function Login() {
     const [username, setUsername] = useState('')
@@ -60,7 +62,10 @@ export default function Login() {
                 name="password" 
                 value={password} 
                 onChange={(event) => setPassword(event.target.value)}/>
-                <button className="button">Login</button>
+                <button className="signup-btn">Login</button>
+                <img className='signin-image' src={SignIn} />
+                <img className='retro-one' src={Retro} />
+                <img className='retro-two' src={Retro} />
             </form>
 
         </div>

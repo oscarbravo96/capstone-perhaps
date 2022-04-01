@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Cookies from 'js-cookie';
 import { navigate } from 'hookrouter';
+import Register from "./register-here.jpg";
+import Retro from "./retro-arcade.jpg";
 
 export default function SignUp() {
     const [username, setUsername] = useState('');
@@ -54,6 +56,9 @@ export default function SignUp() {
                 <input type='text' placeholder='Confirm Password' name='confirmpassword' value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
 
                 <button className="signup-btn">Submit</button>
+                <img className='retro-one' src={Retro} />
+                <img className='register' src={Register} />
+                <img className='retro-two' src={Retro} />
             </form>
         </div>
     )

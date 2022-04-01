@@ -21,6 +21,7 @@ body {
     font-size: 24px;
     display: flex;
     align-items: center;
+    justify-content: center;
     color: #adb2ba;
     text-decoration: none;
     font-weight: bold;
@@ -32,7 +33,46 @@ body {
       top: 33%;
       left: 48%;
       background-color: goldenrod;
+      transition: 0.5s ease-in-out;
+      
+      &:hover {
+        background-color: rgb(128, 26, 0);
+      }
     }
+
+    
+
+    .retro-one {
+      width: 250px;
+      height: 400px;
+      position: absolute;
+      top: 22%;
+      left: 14.5%;
+    }
+
+    .retro-two {
+      width: 250px;
+      height: 400px;
+      position: absolute;
+      top: 22%;
+      right: 14.5%;
+    }
+
+    .register {
+      position: absolute;
+      top: 52%;
+      left: 39.5%;
+    }
+    
+
+    .signin-image {
+      position: absolute;
+      top: 52%;
+      left: 39.5%;
+      height: 250px;
+      width: 400px;
+    }
+
 }
 
 .nav-link-wrapper {
@@ -87,7 +127,8 @@ body {
     left: 70%;
 }
 
-// delete below
+
+
 .game-area {
     position: relative;
     margin: 50px auto;
@@ -160,6 +201,12 @@ body {
     z-index: 10;
     cursor: pointer;
     user-select: none;
+
+    transition: 0.5s ease-in-out;
+
+    &:hover {
+      color: darkcyan;
+    }
   }
   
   .left-arrow {
@@ -171,6 +218,11 @@ body {
     z-index: 10;
     cursor: pointer;
     user-select: none;
+    transition: 0.5s ease-in-out;
+
+    &:hover {
+      color: darkcyan;
+    }
   }
   
   .slide {
