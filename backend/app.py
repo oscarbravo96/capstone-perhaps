@@ -31,6 +31,9 @@ class UserSchema(ma.Schema):
 
 user_schema = UserSchema()
 multiple_user_schema = UserSchema(many=True)
+app.route('/', methods=["GET"])
+def home_page():
+    return "hello"
 
 @app.route('/user/add', methods=['POST'])
 @cross_origin()
