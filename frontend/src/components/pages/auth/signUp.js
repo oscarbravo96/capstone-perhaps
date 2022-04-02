@@ -23,8 +23,10 @@ export default function SignUp() {
         } else {
             fetch('https://oeb-capstone-backend.herokuapp.com/user/add',{
                 method: 'POST',
+                credentials: 'same-origin',
                 headers: {
-                    'content-type': 'application/json'
+                    'content-type': 'application/json',
+                    'Access-Control-Allow-Origin': '*'
                 },
                 body: JSON.stringify({
                     username: username,
