@@ -33,6 +33,7 @@ export default function SignUp() {
             })
             .then(res => res.json())
             .then(res => {
+                // something
                 if(res === "Error: the username you've entered has been taken") {
                     setError(true);
                     setErrorMessage("Error: the username you've entered has been taken");
