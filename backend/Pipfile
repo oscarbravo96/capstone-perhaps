@@ -10,6 +10,8 @@ flask-sqlalchemy = "*"
 marshmallow-sqlalchemy = "*"
 flask-cors = "*"
 flask-bcrypt = "*"
+psycopg2 = "*"
+gunicorn = "*"
 
 [dev-packages]
 

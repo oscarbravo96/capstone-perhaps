@@ -1,7 +1,7 @@
 import React, {useEffect, useState } from 'react';
 import { useRoutes } from 'hookrouter';
 import Home from './pages/home';
-import NavBar from './navigation/NavBar';
+import NavBar from './navigation/navBar';
 import SignUp from './pages/auth/signUp';
 import Login from './pages/auth/login';
 import Game from './pages/game';

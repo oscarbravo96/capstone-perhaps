@@ -17,7 +17,7 @@ export default function Login() {
             setError(true)
             setErrorMessage('Error: all fields must be completed')
         } else {
-            fetch('http://localhost:5000/user/verify', {
+            fetch('https://oeb-capstone-backend.herokuapp.com/user/verify', {
                 method: "POST",
                 credentials: 'same-origin',
                 headers: {

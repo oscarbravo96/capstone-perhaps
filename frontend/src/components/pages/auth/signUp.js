@@ -21,7 +21,7 @@ export default function SignUp() {
             setError(true);
             setErrorMessage('Error: Passwords must match!')
         } else {
-            fetch('http://localhost:5000/user/add',{
+            fetch('https://oeb-capstone-backend.herokuapp.com/user/add',{
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'
