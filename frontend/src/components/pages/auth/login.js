@@ -17,7 +17,7 @@ export default function Login() {
             setError(true)
             setErrorMessage('Error: all fields must be completed')
         } else {
-            fetch('https://oeb-capstone-backend.herokuapp.com/user/verify', {
+            axios.post('https://oeb-capstone-backend.herokuapp.com/user/verify', {
                 method: "POST",
                 credentials: 'same-origin',
                 headers: {
@@ -29,12 +29,13 @@ export default function Login() {
                     password: password
                 })
             })
-            .then(response => response.json())
+            // .then(response => response.json())
             .then(response => {
+                console.log("work")
                 if(response === 'User has NOT been verified') {
                     setError(true)
                     setErrorMessage("Error: user NOT verified")
-                    console.log("work")
+                    console.log("work again")
                 } else if(response === "youve been verified") {
                     setError(false)
                     setErrorMessage('')
