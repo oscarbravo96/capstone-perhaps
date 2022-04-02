@@ -3,7 +3,7 @@ import { navigate } from 'hookrouter'
 import Cookies from 'js-cookie'
 import SignIn from "./sign-in.png"
 import Retro from "./retro-arcade.jpg";
-import axios from "axios";
+// import axios from "axios";
 
 export default function Login() {
     const [username, setUsername] = useState('')
@@ -18,7 +18,7 @@ export default function Login() {
             setError(true)
             setErrorMessage('Error: all fields must be completed')
         } else {
-            axios.post('https://oeb-capstone-backend.herokuapp.com/user/verify', {
+            fetch('https://oeb-capstone-backend.herokuapp.com/user/verify', {
                 method: "POST",
                 credentials: 'same-origin',
                 headers: {
@@ -30,7 +30,7 @@ export default function Login() {
                     password: password
                 })
             })
-            // .then(response => response.json())
+            .then(response => response.json())
             .then(response => {
                 console.log("work")
                 if(response === 'User has NOT been verified') {
